@@ -1,8 +1,8 @@
+# This POC forwards all sessions in a particular msfconsole server to Hivemind allowing them to be controlled from the Hivemind frontend
+
 import json
 import time
-
 from pymetasploit3.msfrpc import MsfRpcClient
-
 from Utils.hivemind import Hivemind, ModuleFunc, ParamTypes, Module, Implant
 
 client = MsfRpcClient(password='password', username='user', ssl=False, server='192.168.215.140')
