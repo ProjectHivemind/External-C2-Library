@@ -227,7 +227,6 @@ class Hivemind:
         sock.shutdown(socket.SHUT_WR)
         data_received = sock.recv(1024)
         sock.close()
-        print(data_received)
         if data_received.strip() != b'':
             info = json.loads(data_received)
             return info
