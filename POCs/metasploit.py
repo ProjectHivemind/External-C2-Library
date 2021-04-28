@@ -17,8 +17,6 @@ mod2 = Module('linux shell', 'Module for running linux commands', [cmd_func2])
 while True:
     time.sleep(5)
     for k, v in client.sessions.list.items():
-        print(k)
-        print(v)
         implant = Implant(v['tunnel_peer'], f'PAYLOAD {v["via_payload"]}', 'linux', 'Hostname', f'MSF {v["type"]}', '1.0')
         if v['type'] == 'shell':
             implant.add_module(mod2)
